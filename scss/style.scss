@@ -3,23 +3,22 @@
 
 #tab1 {
 	width: 600px;
-	//height: 350px;
 	position: relative;
 	margin: 50px auto;
 	border: 1px solid #555;
+	//frame에 overflow: hidden설정
+	overflow: hidden;
 
 	ul {
 		width: 100%;
 		display: flex;
 		height: 50px;
-		position: relative;
-		z-index: 3;
 
 		li {
 			flex: 1;
 			height: 100%;
 			background: #555;
-			font: bold 1rem/50px 'arial';
+			font: bold 0.8rem/50px 'arial';
 			color: #888;
 			text-align: center;
 			cursor: pointer;
@@ -35,11 +34,13 @@
 		article {
 			width: 100%;
 			position: absolute;
-			bottom: 0;
+			//박스위 세로 위치를 bottom이 아닌 top으로 설정
+			top: 50;
 			left: 0;
+			padding: 50px;
 			z-index: 1;
 			opacity: 0;
-			font: bold 30px/1 'arial';
+			font: 1rem/1.7 'arial';
 
 			&.on {
 				opacity: 1;
