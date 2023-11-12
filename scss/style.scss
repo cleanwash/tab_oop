@@ -3,6 +3,7 @@
 
 #tab1 {
 	width: 600px;
+	height: 350px;
 	position: relative;
 	margin: 50px auto;
 	border: 1px solid #555;
@@ -34,6 +35,7 @@
 		article {
 			width: 100%;
 			position: absolute;
+			height: 300px;
 			//박스위 세로 위치를 bottom이 아닌 top으로 설정
 			top: 50;
 			left: 0;
