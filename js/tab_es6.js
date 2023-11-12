@@ -14,6 +14,8 @@ class Tab {
 		this.el = document.querySelector(el);
 		this.btns = this.el.querySelectorAll('ul li');
 		this.boxs = this.el.querySelectorAll('section article');
+		this.setHeight(0);
+
 		this.boxs.forEach((el) => {
 			el.style.transitionProperty = 'opacity';
 			el.style.transitionDuration = this.fadeSpeed / 1000 + 's';
@@ -41,8 +43,15 @@ class Tab {
 		});
 
 		arr[idx].classList.add(this.activeClass);
+		this.setHeight(idx);
 
 		//activeClass붙어서 활성화 되고 fadeSpeed만큼 트랜지션 모션이 끝난이후에 다시 eventBlock값을 false로 바꿔서 이벤트 연결가능처리
 		setTimeout(() => (this.eventBlock = false), this.fadeSpeed);
+	}
+
+	setHeight(idx) {
+		const activeHT = parseInt(getComputedStyle(this.boxs[idx]).height);
+		const frameHT = activeHT + 50;
+		this.el.style.height = frameHT + 'px';
 	}
 }
